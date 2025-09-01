@@ -46,15 +46,53 @@ Según la **frecuencia** ($\nu$) o **energía de fotón** ($E=h\nu$):
 ## 4. Radiación de baja frecuencia (ELF)
 Ejemplo: **líneas de transmisión de alta tensión (50–60 Hz)**.
 
-### Caracterización
-- Frecuencia: $f = 50 \, \text{Hz}$.  
-- Longitud de onda: $\lambda \sim 5000 \, \text{km}$.  
-- Intensidades típicas bajo líneas de transmisión:  
-  - $E \sim 0.1-10 \,\text{kV/m}$.  
-  - $B \sim 0.01-20 \,\mu\text{T}$.  
+### 4.1 Caracterización
+- **Frecuencia:**
 
-### Corrientes inducidas
-Por la ley de Faraday, un campo magnético variable induce un campo eléctrico:
+$$
+f \approx 50 \,\text{Hz} \quad \text{o} \quad 60 \,\text{Hz}
+$$
+
+- **Longitud de onda:**
+
+$$
+\lambda = \frac{c}{f} \sim 5000 \,\text{km}
+$$
+
+- **Campos generados:**
+
+Campo eléctrico por el voltaje:
+
+$$
+E(r) \sim \frac{V}{d}
+$$
+
+Campo magnético por la corriente:
+
+$$
+B(r) = \frac{\mu_0 I}{2 \pi r}
+$$
+
+- **Intensidades típicas medidas cerca de líneas de alta tensión:**
+  - Campo eléctrico: $0.1 - 10 \,\text{kV/m}$  
+  - Campo magnético: $0.01 - 20 \,\mu\text{T}$
+
+---
+
+### 4.2 Energía de los fotones
+Un fotón de 60 Hz tiene energía:
+
+$$
+E_\gamma = h \nu \approx 4 \times 10^{-14} \,\text{eV}
+$$
+
+👉 Esto es **14 órdenes de magnitud menor** que la energía necesaria para romper un enlace químico (~1–10 eV).  
+Por lo tanto, **no hay ionización directa ni ruptura de ADN con ELF**.
+
+---
+
+### 4.3 Corrientes inducidas
+Por la **ley de Faraday**, un campo magnético variable induce un campo eléctrico:
 
 $$
 E_{\text{inducido}}(r) = \frac{r}{2} \, \omega B_0
@@ -79,6 +117,26 @@ muy por debajo del umbral de estimulación nerviosa ($\sim 0.1 \,\text{A/m}^2$).
 
 ---
 
+### 4.4 Modelos de riesgo biológico
+- Los efectos son **macroscópicos/inducidos**, no cuánticos.  
+- **Modelo básico:**
+
+$$
+J_{\text{inducido}} \propto f \, B \, r
+$$
+
+donde $B$ es el campo magnético y $r$ la dimensión característica del cuerpo.
+
+- **Límites recomendados (ICNIRP, 2010):**
+  - **Exposición pública:**
+    - $E < 5 \,\text{kV/m}$  
+    - $B < 200 \,\mu\text{T}$  
+  - **Exposición ocupacional:**
+    - $E < 10 \,\text{kV/m}$  
+    - $B < 1000 \,\mu\text{T}$  
+
+---
+
 ## 5. Escalamiento en organismos vivos
 - **Grandes organismos (humanos, ganado):** mayor $r$ → mayor corriente inducida.  
 - **Pequeños organismos (ratones, insectos):** menor $r$ → corrientes despreciables.  
@@ -86,27 +144,58 @@ muy por debajo del umbral de estimulación nerviosa ($\sim 0.1 \,\text{A/m}^2$).
 
 ---
 
-## 6. Otros efectos: sensores biológicos de orientación
-Algunos organismos poseen **magnetorreceptores**, que no dependen de la inducción de corriente sino de interacciones magnéticas directas:
+## 6. Interpretación biológica
 
-- **Magnetita intracelular:** cristales magnéticos alineados con el campo terrestre (~50 μT).  
-- **Criptocromo (pares radicales):** moléculas fotoactivas cuya reacción química depende de campos magnéticos débiles.
+### 6.1 Exposición típica
+- **Valores ambientales (<0.5 μT):** corrientes inducidas despreciables frente al ruido bioeléctrico natural.  
+- **Exposición cercana a líneas de transmisión (>10 μT):** corrientes inducidas mayores, pero aún pequeñas frente a umbrales de estimulación.  
+- **Riesgo a largo plazo:** debate epidemiológico. ICNIRP e IARC clasifican ELF como **posible carcinógeno (grupo 2B)**.
 
-👉 El campo terrestre (~50 μT) es la referencia natural.  
-Campos artificiales de similar magnitud (10–100 μT, 50 Hz) pueden introducir **“ruido magnético”** en la brújula biológica, afectando orientación y migración de:
-- Aves (palomas, petirrojos, gorriones).  
-- Insectos (abejas, hormigas).  
-- Peces y tortugas marinas.
+---
+
+### 6.2 Magnetorrecepción
+La magnetorrecepción no se basa en corrientes inducidas clásicas, sino en mecanismos especializados:
+
+#### a) Magnetita (Fe₃O₄) intracelular
+- Cristales encontrados en bacterias magnetotácticas, peces, tortugas, aves e insectos (abejas, hormigas).  
+- Energía de interacción magnética:
+
+$$
+E = -\vec{m} \cdot \vec{B}
+$$
+
+donde $\vec{m}$ es el momento magnético del cristal y $\vec{B}$ el campo externo.  
+- Diferencias de pocos μT pueden alinear cristales y activar canales iónicos.  
+- Sensibles a **campos estáticos (DC)** como el terrestre (~50 μT).
+
+#### b) Pares radicales en criptocromo
+- Moléculas fotoactivas (ej. criptocromo en retina de aves e insectos).  
+- Forman pares radicales cuyo destino depende de $B$:  
+
+$$
+P_{\text{reacción}} = f(B, \Delta g, \tau)
+$$
+
+donde $\Delta g$ es la diferencia de factores giromagnéticos y $\tau$ el tiempo de coherencia.  
+- Sensibles a **campos débiles y variables (AC o ELF)**, incluso de decenas de μT.
+
+---
+
+### 6.3 Implicaciones ecológicas
+- **Aves migratorias:** desorientación en presencia de ELF.  
+- **Insectos:** posible interferencia en navegación de abejas/hormigas.  
+- **Peces y tortugas:** riesgo en migración si hay campos artificiales submarinos.  
+
+👉 Los campos ELF (10–100 μT) pueden actuar como **“ruido magnético”** que perturba la brújula biológica natural.
 
 ---
 
 ## 7. Síntesis
-- La radiación electromagnética se describe mediante campos eléctricos y magnéticos acoplados.  
+- La radiación electromagnética se describe mediante campos $E$ y $B$ acoplados.  
 - Los efectos biológicos dependen de la frecuencia: térmicos, fotoquímicos o ionizantes.  
-- La radiación de **baja frecuencia (50–60 Hz)** no ioniza, pero puede inducir corrientes mínimas en organismos grandes.  
+- La radiación de **baja frecuencia (50–60 Hz)** no ioniza, pero induce corrientes mínimas en organismos grandes.  
 - En organismos con **magnetorreceptores**, incluso campos artificiales del orden de decenas de μT pueden alterar la orientación, con consecuencias ecológicas.
 
 ---
 
-✍️ Estos apuntes son un esfuerzo de **traducción interdisciplinaria**:  
-un físico explica cómo los conceptos matemáticos de la radiación electromagnética ayudan a entender interacciones con seres vivos, para ser dialogados también en el marco de las ciencias sociales y biológicas.
+✍️ Documento pensado como **apuntes de física aplicados a la biología**, útil para dialogar 
